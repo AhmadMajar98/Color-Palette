@@ -1,25 +1,24 @@
 const express = require('express');
 const cors = require('cors');
+const chroma = require('chroma-js'); // Import chroma-js
 const app = express();
 const PORT = 5000;
 
-app.use(cors()); 
-app.use(express.json()); 
+app.use(cors());
+app.use(express.json());
 
 const generateRandomColor = () => {
-  const hexa = "0123456789ABCDEF";
-  let color = "#";
-  for (let i = 0; i < 6; i++) {
-    color += hexa[Math.floor(Math.random() * hexa.length)];
-  }
-  return color;
+  return chroma.random().hex(); // Generate a random color in hex format
 };
 
 const generateColorPalette = (lockedColors = []) => {
   return Array(5).fill("").map((_, index) => {
+    const color = lockedColors[index]?.locked ? lockedColors[index].color : generateRandomColor();
     return {
-      color: lockedColors[index]?.locked ? lockedColors[index].color : generateRandomColor(),
+      color,
       locked: lockedColors[index]?.locked || false,
+      rgb: chroma(color).rgb().join(", "), // Convert to RGB
+      hsl: chroma(color).hsl().join(", "), // Convert to HSL
     };
   });
 };
