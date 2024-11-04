@@ -79,11 +79,11 @@ app.post('/api/toggle-lock', (req, res) => {
 });
 
 app.post('/api/save_palette', (req, res) => {
-  const {colors, paletteName} = req.body 
+  const {colors, name} = req.body 
   const code = Math.random().toString(36).substring(2, 8).toUpperCase();
   const link = `http://localhost:3000/palette/${code}`
 
-  const paletteData = { paletteName: paletteName, colors, code, link}
+  const paletteData = { name, colors, code, link}
 
   const filePath = path.join(__dirname, 'palettes.json')
 

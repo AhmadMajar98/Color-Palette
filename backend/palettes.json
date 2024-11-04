@@ -1,5 +1,6 @@
 [
   {
+    "name": "Ahmad",
     "colors": [
       {
         "color": "#74820F",
@@ -32,7 +33,7 @@
         "hsl": "hsl(72, 100%, 17%)"
       }
     ],
-    "code": "7Y6Q35",
-    "link": "http://localhost:3000/palette/7Y6Q35"
+    "code": "POYBMS",
+    "link": "http://localhost:3000/palette/POYBMS"
   }
 ]
