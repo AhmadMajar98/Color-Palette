@@ -1,0 +1,38 @@
+[
+  {
+    "colors": [
+      {
+        "color": "#74820F",
+        "locked": false,
+        "rgb": "rgb(116, 130, 15)",
+        "hsl": "hsl(67, 79%, 28%)"
+      },
+      {
+        "color": "#68770A",
+        "locked": false,
+        "rgb": "rgb(104, 119, 10)",
+        "hsl": "hsl(68, 84%, 25%)"
+      },
+      {
+        "color": "#5C6B06",
+        "locked": false,
+        "rgb": "rgb(92, 107, 6)",
+        "hsl": "hsl(69, 89%, 22%)"
+      },
+      {
+        "color": "#506002",
+        "locked": false,
+        "rgb": "rgb(80, 96, 2)",
+        "hsl": "hsl(70, 96%, 19%)"
+      },
+      {
+        "color": "#455600",
+        "locked": false,
+        "rgb": "rgb(69, 86, 0)",
+        "hsl": "hsl(72, 100%, 17%)"
+      }
+    ],
+    "code": "7Y6Q35",
+    "link": "http://localhost:3000/palette/7Y6Q35"
+  }
+]

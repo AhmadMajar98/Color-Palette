@@ -1,5 +1,7 @@
 const express = require('express');
 const cors = require('cors');
+const fs = require('fs')
+const path = require('path')
 const chroma = require('chroma-js');
 const app = express();
 const PORT = 5000;
@@ -43,12 +45,21 @@ const generateColorPalette = (method, lockedColors = []) => {
       break;
   }
 
-  return newColors.map((color, index) => ({
-    color: lockedColors[index]?.locked ? lockedColors[index].color : color,
-    locked: lockedColors[index]?.locked || false,
-    rgb: `rgb(${chroma(color).rgb().map(Math.round).join(", ")})`,
-    hsl: `hsl(${Math.round(chroma(color).hsl()[0])}, ${Math.round(chroma(color).hsl()[1] * 100)}%, ${Math.round(chroma(color).hsl()[2] * 100)}%)`
-  }));
+return newColors.map((color, index) => {
+  const isLocked = lockedColors[index]?.locked; 
+  const lockedColor = lockedColors[index]?.color; 
+
+  return {
+    color: isLocked ? lockedColor : color, 
+    locked: isLocked || false,
+    rgb: isLocked 
+      ? `rgb(${chroma(lockedColor).rgb().map(Math.round).join(", ")})` 
+      : `rgb(${chroma(color).rgb().map(Math.round).join(", ")})`, 
+    hsl: isLocked 
+      ? `hsl(${Math.round(chroma(lockedColor).hsl()[0])}, ${Math.round(chroma(lockedColor).hsl()[1] * 100)}%, ${Math.round(chroma(lockedColor).hsl()[2] * 100)}%)` 
+      : `hsl(${Math.round(chroma(color).hsl()[0])}, ${Math.round(chroma(color).hsl()[1] * 100)}%, ${Math.round(chroma(color).hsl()[2] * 100)}%)` 
+  };
+});
 };
 
 app.post('/api/colors', (req, res) => {
@@ -65,6 +76,52 @@ app.post('/api/toggle-lock', (req, res) => {
   });
 
   res.json({ colors: updatedColors });
+});
+
+app.post('/api/save_palette', (req, res) => {
+  const {colors, paletteName} = req.body 
+  const code = Math.random().toString(36).substring(2, 8).toUpperCase();
+  const link = `http://localhost:3000/palette/${code}`
+
+  const paletteData = { paletteName: paletteName, colors, code, link}
+
+  const filePath = path.join(__dirname, 'palettes.json')
+
+  fs.readFile(filePath, (err, data) => {
+    if(err) {
+      return res.status(500).json({message: 'Error reading file'})
+    }
+    const palettes = data.length ? JSON.parse(data) : [];
+
+    palettes.push(paletteData)
+
+    fs.writeFile(filePath, JSON.stringify(palettes, null, 2), (err) => {
+      if (err) {
+        return res.status(500).json({message: 'Error saving file'})
+      }
+      res.json(paletteData)
+    })
+  })
+})
+
+app.get('/api/palette/:code', (req, res) => {
+  const { code } = req.params;
+  const filePath = path.join(__dirname, 'palettes.json');
+
+  fs.readFile(filePath, (err, data) => {
+    if (err) {
+      return res.status(500).json({ message: 'Error reading file' });
+    }
+    
+    const palettes = data.length ? JSON.parse(data) : [];
+    const palette = palettes.find(p => p.code === code);
+
+    if (palette) {
+      res.json(palette);
+    } else {
+      res.status(404).json({ message: 'Palette not found' });
+    }
+  });
 });
 
 app.listen(PORT, () => {
