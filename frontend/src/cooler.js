@@ -4,6 +4,7 @@ import CopyToClipboard from "react-copy-to-clipboard";
 const ColorPaletteGenerator = () => {
   const [colors, setColors] = useState([]);
   const [colorType, setColorType] = useState('hex');
+  const [colorMethod, setColorMethod] = useState('random'); // Track the color generation method
 
   const fetchNewColors = async () => {
     try {
@@ -12,7 +13,7 @@ const ColorPaletteGenerator = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ currentColors: colors }),
+        body: JSON.stringify({ method: colorMethod, currentColors: colors }),
       });
       const data = await response.json();
       setColors(data.colors);
@@ -39,7 +40,7 @@ const ColorPaletteGenerator = () => {
 
   useEffect(() => {
     fetchNewColors();
-  }, []);
+  }, [colorMethod]); // Fetch colors when method changes
 
   useEffect(() => {
     const handleKeyDown = (event) => {
@@ -87,6 +88,15 @@ const ColorPaletteGenerator = () => {
             />
             HSL
           </label>
+        </div>
+        <div className="ml-4">
+          <label className="mr-2">Generate:</label>
+          <select onChange={(e) => setColorMethod(e.target.value)} value={colorMethod}>
+            <option value="random">Random</option>
+            <option value="monochrome">Monochrome</option>
+            <option value="triadic">Triadic</option>
+            <option value="quadratic">Quadratic</option>
+          </select>
         </div>
       </div>
       <div className="w-full flex">
