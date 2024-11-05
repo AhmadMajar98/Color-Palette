@@ -1,39 +1,113 @@
 [
   {
-    "name": "Ahmad",
+    "name": "ahmad",
     "colors": [
       {
-        "color": "#74820F",
+        "color": "#D6FFFF",
         "locked": false,
-        "rgb": "rgb(116, 130, 15)",
-        "hsl": "hsl(67, 79%, 28%)"
+        "rgb": "rgb(214, 255, 255)",
+        "hsl": "hsl(180, 100%, 92%)"
       },
       {
-        "color": "#68770A",
+        "color": "#8DE2BA",
         "locked": false,
-        "rgb": "rgb(104, 119, 10)",
-        "hsl": "hsl(68, 84%, 25%)"
+        "rgb": "rgb(141, 226, 186)",
+        "hsl": "hsl(152, 59%, 72%)"
       },
       {
-        "color": "#5C6B06",
+        "color": "#28C378",
         "locked": false,
-        "rgb": "rgb(92, 107, 6)",
-        "hsl": "hsl(69, 89%, 22%)"
+        "rgb": "rgb(40, 195, 120)",
+        "hsl": "hsl(151, 66%, 46%)"
       },
       {
-        "color": "#506002",
+        "color": "#12793B",
         "locked": false,
-        "rgb": "rgb(80, 96, 2)",
-        "hsl": "hsl(70, 96%, 19%)"
+        "rgb": "rgb(18, 121, 59)",
+        "hsl": "hsl(144, 74%, 27%)"
       },
       {
-        "color": "#455600",
+        "color": "#003600",
         "locked": false,
-        "rgb": "rgb(69, 86, 0)",
-        "hsl": "hsl(72, 100%, 17%)"
+        "rgb": "rgb(0, 54, 0)",
+        "hsl": "hsl(120, 100%, 11%)"
       }
     ],
-    "code": "POYBMS",
-    "link": "http://localhost:3000/palette/POYBMS"
+    "code": "R2PU7W",
+    "link": "http://localhost:3000/palette/R2PU7W"
+  },
+  {
+    "name": "Ayham",
+    "colors": [
+      {
+        "color": "#CB9F93",
+        "locked": false,
+        "rgb": "rgb(203, 159, 147)",
+        "hsl": "hsl(13, 35%, 69%)"
+      },
+      {
+        "color": "#07458A",
+        "locked": false,
+        "rgb": "rgb(7, 69, 138)",
+        "hsl": "hsl(212, 90%, 28%)"
+      },
+      {
+        "color": "#E9D836",
+        "locked": false,
+        "rgb": "rgb(233, 216, 54)",
+        "hsl": "hsl(54, 80%, 56%)"
+      },
+      {
+        "color": "#5CC01E",
+        "locked": false,
+        "rgb": "rgb(92, 192, 30)",
+        "hsl": "hsl(97, 73%, 44%)"
+      },
+      {
+        "color": "#60C42B",
+        "locked": false,
+        "rgb": "rgb(96, 196, 43)",
+        "hsl": "hsl(99, 64%, 47%)"
+      }
+    ],
+    "code": "3XFFMV",
+    "link": "http://localhost:3000/palette/3XFFMV"
+  },
+  {
+    "name": "shmasadas",
+    "colors": [
+      {
+        "color": "#1B9259",
+        "locked": false,
+        "rgb": "rgb(27, 146, 89)",
+        "hsl": "hsl(151, 69%, 34%)"
+      },
+      {
+        "color": "#4AC4EA",
+        "locked": false,
+        "rgb": "rgb(74, 196, 234)",
+        "hsl": "hsl(194, 79%, 60%)"
+      },
+      {
+        "color": "#FD1510",
+        "locked": true,
+        "rgb": "rgb(253, 21, 16)",
+        "hsl": "hsl(1, 98%, 53%)"
+      },
+      {
+        "color": "#FDE35E",
+        "locked": false,
+        "rgb": "rgb(253, 227, 94)",
+        "hsl": "hsl(50, 98%, 68%)"
+      },
+      {
+        "color": "#E0344D",
+        "locked": false,
+        "rgb": "rgb(224, 52, 77)",
+        "hsl": "hsl(351, 74%, 54%)"
+      }
+    ],
+    "code": "47ZEDK",
+    "link": "http://localhost:3000/palette/47ZEDK"
   }
 ]

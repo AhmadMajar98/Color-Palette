@@ -14,7 +14,8 @@ const generateRandomColor = () => {
 };
 
 const generateMonochromeColors = (baseColor) => {
-  return chroma.scale([baseColor, chroma(baseColor).darken()]).mode('lab').colors(5).map(color => color.toUpperCase());
+  return chroma
+    .scale([chroma(baseColor).brighten(3), baseColor, chroma(baseColor).darken(3)]).domain([0, 0.5, 1]) .mode('lab').colors(5).map(color => color.toUpperCase());
 };
 
 const generateTriadicColors = (baseColor) => {
@@ -79,33 +80,39 @@ app.post('/api/toggle-lock', (req, res) => {
 });
 
 app.post('/api/save_palette', (req, res) => {
-  const {colors, name} = req.body 
+  const { colors, name } = req.body;
   const code = Math.random().toString(36).substring(2, 8).toUpperCase();
-  const link = `http://localhost:3000/palette/${code}`
+  const link = `http://localhost:3000/palette/${code}`;
 
-  const paletteData = { name, colors, code, link}
-
-  const filePath = path.join(__dirname, 'palettes.json')
+  const paletteData = { name, colors, code, link };
+  const filePath = path.join(__dirname, 'palettes.json');
 
   fs.readFile(filePath, (err, data) => {
-    if(err) {
-      return res.status(500).json({message: 'Error reading file'})
+    if (err) {
+      return res.status(500).json({ message: 'Error reading file' });
     }
-    const palettes = data.length ? JSON.parse(data) : [];
 
-    palettes.push(paletteData)
+    let palettes = data.length ? JSON.parse(data) : [];
+    
+    const existingPaletteIndex = palettes.findIndex(palette => palette.name === name);
+    
+    if (existingPaletteIndex !== -1) {
+      palettes[existingPaletteIndex] = { ...palettes[existingPaletteIndex], colors };
+    } else {
+      palettes.push(paletteData);
+    }
 
     fs.writeFile(filePath, JSON.stringify(palettes, null, 2), (err) => {
       if (err) {
-        return res.status(500).json({message: 'Error saving file'})
+        return res.status(500).json({ message: 'Error saving file' });
       }
-      res.json(paletteData)
-    })
-  })
-})
+      res.json(paletteData);
+    });
+  });
+});
 
 app.get('/api/palette/:code', (req, res) => {
-  const { code } = req.params;
+  const { code: paletteCode } = req.params; 
   const filePath = path.join(__dirname, 'palettes.json');
 
   fs.readFile(filePath, (err, data) => {
@@ -114,7 +121,7 @@ app.get('/api/palette/:code', (req, res) => {
     }
     
     const palettes = data.length ? JSON.parse(data) : [];
-    const palette = palettes.find(p => p.code === code);
+    const palette = palettes.find(p => p.code === paletteCode);
 
     if (palette) {
       res.json(palette);
@@ -123,6 +130,7 @@ app.get('/api/palette/:code', (req, res) => {
     }
   });
 });
+
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);

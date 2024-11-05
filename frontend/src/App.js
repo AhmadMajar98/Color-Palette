@@ -1,10 +1,15 @@
 import './App.css';
 import ColorPaletteGenerator from './cooler';
-
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom";  
 function App() {
   return (
     <div className="App">
-      <ColorPaletteGenerator />
+      <Router >
+        <Routes>
+      <Route path='/' element={<ColorPaletteGenerator />} />
+      
+        </Routes>
+      </Router>
     </div>
   );
 }
