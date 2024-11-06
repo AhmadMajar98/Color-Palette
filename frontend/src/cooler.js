@@ -53,7 +53,7 @@ const ColorPaletteGenerator = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ name: paletteName, colors }),
+        body: JSON.stringify({ name: paletteName, colors, like: like }),
       });
       if (response.ok) {
         alert("Palette saved successfully!");

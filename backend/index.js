@@ -80,12 +80,12 @@ app.post('/api/toggle-lock', (req, res) => {
 });
 
 app.post('/api/save_palette', (req, res) => {
-  const { colors, name } = req.body;
+  const { colors, name, like } = req.body;
   const code = Math.random().toString(36).substring(2, 8).toUpperCase();
   const link = `http://localhost:3000/palette/${code}`;
   
 
-  const paletteData = { name, colors, code, link, like: false };
+  const paletteData = { name, colors, code, link, like };
   const filePath = path.join(__dirname, 'palettes.json');
 
   fs.readFile(filePath, (err, data) => {
@@ -98,7 +98,7 @@ app.post('/api/save_palette', (req, res) => {
     const existingPaletteIndex = palettes.findIndex(palette => palette.name === name);
     
     if (existingPaletteIndex !== -1) {
-      palettes[existingPaletteIndex] = { ...palettes[existingPaletteIndex], colors, code, link, like: false };
+      palettes[existingPaletteIndex] = { ...palettes[existingPaletteIndex], colors, code, link, like };
     } else {
       palettes.push(paletteData);
     }

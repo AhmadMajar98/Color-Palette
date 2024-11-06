@@ -3,76 +3,114 @@
     "name": "ahmad",
     "colors": [
       {
-        "color": "#492F0F",
+        "color": "#4F473A",
         "locked": false,
-        "rgb": "rgb(73, 47, 15)",
-        "hsl": "hsl(33, 66%, 17%)"
+        "rgb": "rgb(79, 71, 58)",
+        "hsl": "hsl(37, 15%, 27%)"
       },
       {
-        "color": "#AE4EF7",
-        "locked": false,
-        "rgb": "rgb(174, 78, 247)",
-        "hsl": "hsl(274, 91%, 64%)"
-      },
-      {
-        "color": "#895FEA",
-        "locked": false,
-        "rgb": "rgb(137, 95, 234)",
-        "hsl": "hsl(258, 77%, 65%)"
-      },
-      {
-        "color": "#4ADD62",
-        "locked": false,
-        "rgb": "rgb(74, 221, 98)",
-        "hsl": "hsl(130, 68%, 58%)"
-      },
-      {
-        "color": "#C5023C",
+        "color": "#81D637",
         "locked": true,
-        "rgb": "rgb(197, 2, 60)",
-        "hsl": "hsl(342, 98%, 39%)"
+        "rgb": "rgb(129, 214, 55)",
+        "hsl": "hsl(92, 66%, 53%)"
+      },
+      {
+        "color": "#B5B8D2",
+        "locked": true,
+        "rgb": "rgb(181, 184, 210)",
+        "hsl": "hsl(234, 24%, 77%)"
+      },
+      {
+        "color": "#4F67DD",
+        "locked": true,
+        "rgb": "rgb(79, 103, 221)",
+        "hsl": "hsl(230, 68%, 59%)"
+      },
+      {
+        "color": "#E77D94",
+        "locked": false,
+        "rgb": "rgb(231, 125, 148)",
+        "hsl": "hsl(347, 69%, 70%)"
       }
     ],
-    "code": "PY98EZ",
-    "link": "http://localhost:3000/palette/PY98EZ",
-    "like": false
+    "code": "X0UDXN",
+    "link": "http://localhost:3000/palette/X0UDXN",
+    "like": true
   },
   {
     "name": "ayham",
     "colors": [
       {
-        "color": "#DAFFFF",
+        "color": "#B9FFFF",
         "locked": false,
-        "rgb": "rgb(218, 255, 255)",
-        "hsl": "hsl(180, 100%, 93%)"
+        "rgb": "rgb(185, 255, 255)",
+        "hsl": "hsl(180, 100%, 86%)"
       },
       {
-        "color": "#90E8E0",
+        "color": "#6DC4BE",
         "locked": false,
-        "rgb": "rgb(144, 232, 224)",
-        "hsl": "hsl(175, 66%, 74%)"
+        "rgb": "rgb(109, 196, 190)",
+        "hsl": "hsl(176, 42%, 60%)"
       },
       {
-        "color": "#16D0C2",
+        "color": "#028B81",
         "locked": false,
-        "rgb": "rgb(22, 208, 194)",
-        "hsl": "hsl(175, 81%, 45%)"
+        "rgb": "rgb(2, 139, 129)",
+        "hsl": "hsl(176, 97%, 28%)"
       },
       {
-        "color": "#07857B",
+        "color": "#124A40",
         "locked": false,
-        "rgb": "rgb(7, 133, 123)",
-        "hsl": "hsl(175, 90%, 27%)"
+        "rgb": "rgb(18, 74, 64)",
+        "hsl": "hsl(169, 61%, 18%)"
       },
       {
-        "color": "#00423A",
+        "color": "#001100",
         "locked": false,
-        "rgb": "rgb(0, 66, 58)",
-        "hsl": "hsl(173, 100%, 13%)"
+        "rgb": "rgb(0, 17, 0)",
+        "hsl": "hsl(120, 100%, 3%)"
       }
     ],
-    "code": "LZ4LPW",
-    "link": "http://localhost:3000/palette/LZ4LPW",
+    "code": "5X1PEH",
+    "link": "http://localhost:3000/palette/5X1PEH",
     "like": false
+  },
+  {
+    "name": "basel",
+    "colors": [
+      {
+        "color": "#D2FFAF",
+        "locked": false,
+        "rgb": "rgb(210, 255, 175)",
+        "hsl": "hsl(94, 100%, 84%)"
+      },
+      {
+        "color": "#87DF66",
+        "locked": false,
+        "rgb": "rgb(135, 223, 102)",
+        "hsl": "hsl(104, 65%, 64%)"
+      },
+      {
+        "color": "#0EBD01",
+        "locked": false,
+        "rgb": "rgb(14, 189, 1)",
+        "hsl": "hsl(116, 99%, 37%)"
+      },
+      {
+        "color": "#017306",
+        "locked": false,
+        "rgb": "rgb(1, 115, 6)",
+        "hsl": "hsl(123, 98%, 23%)"
+      },
+      {
+        "color": "#003100",
+        "locked": false,
+        "rgb": "rgb(0, 49, 0)",
+        "hsl": "hsl(120, 100%, 10%)"
+      }
+    ],
+    "code": "C06Y8I",
+    "link": "http://localhost:3000/palette/C06Y8I",
+    "like": true
   }
 ]
