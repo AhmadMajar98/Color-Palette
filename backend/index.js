@@ -83,8 +83,9 @@ app.post('/api/save_palette', (req, res) => {
   const { colors, name } = req.body;
   const code = Math.random().toString(36).substring(2, 8).toUpperCase();
   const link = `http://localhost:3000/palette/${code}`;
+  
 
-  const paletteData = { name, colors, code, link };
+  const paletteData = { name, colors, code, link, like: false };
   const filePath = path.join(__dirname, 'palettes.json');
 
   fs.readFile(filePath, (err, data) => {
@@ -97,7 +98,7 @@ app.post('/api/save_palette', (req, res) => {
     const existingPaletteIndex = palettes.findIndex(palette => palette.name === name);
     
     if (existingPaletteIndex !== -1) {
-      palettes[existingPaletteIndex] = { ...palettes[existingPaletteIndex], colors };
+      palettes[existingPaletteIndex] = { ...palettes[existingPaletteIndex], colors, code, link, like: false };
     } else {
       palettes.push(paletteData);
     }
@@ -131,6 +132,58 @@ app.get('/api/palette/:code', (req, res) => {
   });
 });
 
+app.get('/api/select_palette', (req, res) => {
+  const filePath = path.join(__dirname, 'palettes.json');
+  fs.readFile(filePath, (err, data) => {
+    if (err) {
+      return res.status(500).json({ message: 'Error reading file' });
+    }
+    const palettes = data.length ? JSON.parse(data) : [];
+    const paletteNames = palettes.map(p => p.name); 
+    res.json(paletteNames); 
+  });
+});
+
+app.get('/api/select_palette/:name', (req, res) => {
+  const { name: selectedName } = req.params;
+  const filePath = path.join(__dirname, 'palettes.json');
+  fs.readFile(filePath, (err, data) => {
+    if (err) return res.status(500).json({ message: 'Error reading file' });
+    
+    const palettes = data.length ? JSON.parse(data) : [];
+    const palette = palettes.find(p => p.name === selectedName);
+    
+    if (palette) {
+      res.json(palette);
+    } else {
+      res.status(404).json({ message: 'Palette not found' });
+    }
+  });
+});
+
+app.get('/api/like_palette/:name', (req, res) => {
+  const { name: selectedName } = req.params;
+  const filePath = path.join(__dirname, 'palettes.json');
+
+  fs.readFile(filePath, (err, data) => {
+    if (err) return res.status(500).json({ message: 'Error reading file' });
+
+    const palettes = data.length ? JSON.parse(data) : [];
+    const palette = palettes.find(p => p.name === selectedName);
+
+    if (palette) {
+      palette.like = !palette.like;
+
+      fs.writeFile(filePath, JSON.stringify(palettes, null, 2), (writeErr) => {
+        if (writeErr) return res.status(500).json({ message: 'Error saving like state' });
+        
+        return res.status(200).json({ message: 'Like status updated', like: palette.like });
+      });
+    } else {
+      return res.status(404).json({ message: 'Palette not found' });
+    }
+  });
+});
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);

@@ -3,111 +3,76 @@
     "name": "ahmad",
     "colors": [
       {
-        "color": "#D6FFFF",
+        "color": "#492F0F",
         "locked": false,
-        "rgb": "rgb(214, 255, 255)",
-        "hsl": "hsl(180, 100%, 92%)"
+        "rgb": "rgb(73, 47, 15)",
+        "hsl": "hsl(33, 66%, 17%)"
       },
       {
-        "color": "#8DE2BA",
+        "color": "#AE4EF7",
         "locked": false,
-        "rgb": "rgb(141, 226, 186)",
-        "hsl": "hsl(152, 59%, 72%)"
+        "rgb": "rgb(174, 78, 247)",
+        "hsl": "hsl(274, 91%, 64%)"
       },
       {
-        "color": "#28C378",
+        "color": "#895FEA",
         "locked": false,
-        "rgb": "rgb(40, 195, 120)",
-        "hsl": "hsl(151, 66%, 46%)"
+        "rgb": "rgb(137, 95, 234)",
+        "hsl": "hsl(258, 77%, 65%)"
       },
       {
-        "color": "#12793B",
+        "color": "#4ADD62",
         "locked": false,
-        "rgb": "rgb(18, 121, 59)",
-        "hsl": "hsl(144, 74%, 27%)"
+        "rgb": "rgb(74, 221, 98)",
+        "hsl": "hsl(130, 68%, 58%)"
       },
       {
-        "color": "#003600",
-        "locked": false,
-        "rgb": "rgb(0, 54, 0)",
-        "hsl": "hsl(120, 100%, 11%)"
-      }
-    ],
-    "code": "R2PU7W",
-    "link": "http://localhost:3000/palette/R2PU7W"
-  },
-  {
-    "name": "Ayham",
-    "colors": [
-      {
-        "color": "#CB9F93",
-        "locked": false,
-        "rgb": "rgb(203, 159, 147)",
-        "hsl": "hsl(13, 35%, 69%)"
-      },
-      {
-        "color": "#07458A",
-        "locked": false,
-        "rgb": "rgb(7, 69, 138)",
-        "hsl": "hsl(212, 90%, 28%)"
-      },
-      {
-        "color": "#E9D836",
-        "locked": false,
-        "rgb": "rgb(233, 216, 54)",
-        "hsl": "hsl(54, 80%, 56%)"
-      },
-      {
-        "color": "#5CC01E",
-        "locked": false,
-        "rgb": "rgb(92, 192, 30)",
-        "hsl": "hsl(97, 73%, 44%)"
-      },
-      {
-        "color": "#60C42B",
-        "locked": false,
-        "rgb": "rgb(96, 196, 43)",
-        "hsl": "hsl(99, 64%, 47%)"
-      }
-    ],
-    "code": "3XFFMV",
-    "link": "http://localhost:3000/palette/3XFFMV"
-  },
-  {
-    "name": "shmasadas",
-    "colors": [
-      {
-        "color": "#1B9259",
-        "locked": false,
-        "rgb": "rgb(27, 146, 89)",
-        "hsl": "hsl(151, 69%, 34%)"
-      },
-      {
-        "color": "#4AC4EA",
-        "locked": false,
-        "rgb": "rgb(74, 196, 234)",
-        "hsl": "hsl(194, 79%, 60%)"
-      },
-      {
-        "color": "#FD1510",
+        "color": "#C5023C",
         "locked": true,
-        "rgb": "rgb(253, 21, 16)",
-        "hsl": "hsl(1, 98%, 53%)"
-      },
-      {
-        "color": "#FDE35E",
-        "locked": false,
-        "rgb": "rgb(253, 227, 94)",
-        "hsl": "hsl(50, 98%, 68%)"
-      },
-      {
-        "color": "#E0344D",
-        "locked": false,
-        "rgb": "rgb(224, 52, 77)",
-        "hsl": "hsl(351, 74%, 54%)"
+        "rgb": "rgb(197, 2, 60)",
+        "hsl": "hsl(342, 98%, 39%)"
       }
     ],
-    "code": "47ZEDK",
-    "link": "http://localhost:3000/palette/47ZEDK"
+    "code": "PY98EZ",
+    "link": "http://localhost:3000/palette/PY98EZ",
+    "like": false
+  },
+  {
+    "name": "ayham",
+    "colors": [
+      {
+        "color": "#DAFFFF",
+        "locked": false,
+        "rgb": "rgb(218, 255, 255)",
+        "hsl": "hsl(180, 100%, 93%)"
+      },
+      {
+        "color": "#90E8E0",
+        "locked": false,
+        "rgb": "rgb(144, 232, 224)",
+        "hsl": "hsl(175, 66%, 74%)"
+      },
+      {
+        "color": "#16D0C2",
+        "locked": false,
+        "rgb": "rgb(22, 208, 194)",
+        "hsl": "hsl(175, 81%, 45%)"
+      },
+      {
+        "color": "#07857B",
+        "locked": false,
+        "rgb": "rgb(7, 133, 123)",
+        "hsl": "hsl(175, 90%, 27%)"
+      },
+      {
+        "color": "#00423A",
+        "locked": false,
+        "rgb": "rgb(0, 66, 58)",
+        "hsl": "hsl(173, 100%, 13%)"
+      }
+    ],
+    "code": "LZ4LPW",
+    "link": "http://localhost:3000/palette/LZ4LPW",
+    "like": false
   }
 ]
